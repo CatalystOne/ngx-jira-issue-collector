@@ -25,3 +25,4 @@ steps:
   displayName: Semantic Release
   env:
     NPM_TOKEN: $(NpmToken)
+    GITHUB_TOKEN: $(GithubToken)
