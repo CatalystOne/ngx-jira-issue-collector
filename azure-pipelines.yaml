@@ -16,10 +16,13 @@ steps:
     versionSpec: '12.x'
 
 - script: npm ci
-  displayName: Install and Build
+  displayName: Run ci
 
 - script: npm run test
   displayName: Run tests
+
+- script: npm run Build
+  displayName: Run build
 
 - script: npm run semantic-release
   displayName: Semantic Release
