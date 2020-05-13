@@ -1,0 +1,27 @@
+trigger:
+  branches:
+    include:
+      - master
+      - 8.x
+
+pool:
+    vmImage: "ubuntu-latest"
+
+steps:
+- checkout: self
+  persistCredentials: true
+
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '12.x'
+
+- script: npm ci
+  displayName: Install and Build
+
+- script: npm run test
+  displayName: Run tests
+
+- script: npm run semantic-release
+  displayName: Semantic Release
+  env:
+    NPM_TOKEN: $(NpmToken)
