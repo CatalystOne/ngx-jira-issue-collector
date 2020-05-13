@@ -37,7 +37,7 @@ describe('NgxJiraIssueCollectorComponent', () => {
       baseUrl: 'http://jira.myorg.com',
       collectorId: 'coll123'
     };
-    const url = TestBed.get(DomSanitizer).bypassSecurityTrustResourceUrl(
+    const url = TestBed.inject(DomSanitizer).bypassSecurityTrustResourceUrl(
       `http://jira.myorg.com/rest/collectors/1.0/template/form/coll123?os_authType=none`
     );
     component.setIframeSrc();

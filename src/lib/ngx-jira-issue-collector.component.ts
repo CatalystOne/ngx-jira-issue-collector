@@ -11,7 +11,7 @@ import { CollectorOptions, CollectorMessage, TriggerPosition } from './types';
   styleUrls: ['./ngx-jira-issue-collector.component.scss']
 })
 export class NgxJiraIssueCollectorComponent implements OnInit {
-  @ViewChild('iframeEl', { static: false }) private iframe: ElementRef<HTMLIFrameElement>;
+  @ViewChild('iframeEl') private iframe: ElementRef<HTMLIFrameElement>;
 
   @Input() configuration?: CollectorOptions;
 
