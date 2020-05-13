@@ -1,6 +1,7 @@
 {
   "name": "ngx-jira-issue-collector",
   "version": "0.0.0-semantically-released",
+  "description": "Jira Issue Collector as an angular component",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
