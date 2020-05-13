@@ -1,27 +1,106 @@
-# NgxJiraIssueCollector
+# ngx-jira-issue-collector
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
+## Commands
 
-## Development server
+```bash
+npm run {lint, test, build, commit, semantic-release}
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Compatibility
+| Angular | Channel |
+| --------|--------|
+| 8.x.x   | 8.x    |
+| 9.x.x   | 9.x    |
 
-## Code scaffolding
+Ivy compilation is disabled as per [docs](https://angular.io/guide/creating-libraries#publishing-your-library)
+>It is not recommended to publish Ivy libraries to NPM repositories. Before publishing a library to NPM, build it using the --prod flag which will use the older compiler and runtime known as View Engine instead of Ivy.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Jira    |
+| ------- |
+| v8.2.3  |
 
-## Build
+*Only tested with Jira Software*
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## API
+`import { NgxJiraIssueCollectorModule } from 'ngx-jira-issue-collector';`
 
-## Running unit tests
+### @Inputs
+| Input            | Type    | Required                   |
+| ---------------- | ------- | -------------------------- |
+| configuration    | [CollectorOptions](./src/lib/types/collector-options.type.ts)  | :heavy_check_mark: |
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Example
+### Jira trigger
+```ts
+config: CollectorOptions = {
+  baseUrl: 'https://jira.myorg.com',
+  collectorId: 'coll123'
+}
+```
+```html
+<div>
+  <ngx-jira-issue-collector [configuration]="config"></ngx-jira-issue-collector>
+</div>
+```
+### Custom trigger
+```ts
+config: CollectorOptions = {
+  baseUrl: 'https://jira.myorg.com',
+  collectorId: 'coll123'
+}
+```
+```html
+<div>
+  <button (click)="collector.showDialog()">Click me!</button>
+  <ngx-jira-issue-collector [configuration]="config" #collector></ngx-jira-issue-collector>
+</div>
+```
 
-## Running end-to-end tests
+### Custom environment
+Environment are the properties sent to Jira if `CollectorOptions.recordWebInfo` is true. The default information, if the user allows collection, is:
+```ts
+const environment = {
+  Location: window.location.href,
+  Referrer: document.referrer,
+  'User-Agent': navigator.userAgent,
+  'Screen Resolution': screen.width + ' x ' + screen.height
+}
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Using `CollectorOptions.environment` and `CollectorOptions.environmentFn` you can specify other defaults to collect information about the user's environment.
 
-## Further help
+```ts
+config: CollectorOptions = {
+  baseUrl: 'https://jira.myorg.com',
+  collectorId: 'coll123',
+  environment: {
+    'custom-env': 'test'
+  },
+  environmentFn: () => {
+    return {
+      'custom-env2': 'test'
+    }
+  }
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Field values
+Field values can be used to pre-populate fields in Jira, using `CollectorOptions.fieldValues` and `CollectorOptions.fieldValuesFn`.
+```ts
+config: CollectorOptions = {
+  baseUrl: 'https://jira.myorg.com',
+  collectorId: 'coll123',
+  fieldValues: {
+    summary: 'Title of ticket'
+  },
+  fieldValuesFn: () => {
+    return {
+      description: 'Textarea for in-depth description'
+    }
+  }
+}
+```
+
+The keys should correspond to a field selected in the Issue collector configuration, for custom fields refer to the jira documentation.
