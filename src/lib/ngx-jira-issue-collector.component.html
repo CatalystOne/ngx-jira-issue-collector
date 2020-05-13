@@ -1,0 +1,15 @@
+<div id="atl-wrapper" *ngIf="configLoaded && configuration.enabled">
+  <div id="container-wrapper" *ngIf="created">
+    <div id="atlwdg-container" [ngClass]="{'d-none': loader }" [ngStyle]="{ 'height': configuration.customHeight ? configuration.customHeight : 'auto' }" class="atlwdg-popup">
+      <iframe id="atlwdg-frame" scrolling="no" frameborder="0" [src]="iframeSrc" #iframeEl (load)="emitMessage()"></iframe>
+    </div>
+  </div>
+  <div id="atlwdg-blanket" class="atlwdg-blanket" *ngIf="!hidden || loader"></div>
+  <div id="atl-loader" class="lds-ring" *ngIf="created && loader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <a id="atlwdg-trigger" href="#" (click)="showDialog()" [ngClass]="getTriggerClasses()">{{ configuration.triggerText }}</a>
+</div>
