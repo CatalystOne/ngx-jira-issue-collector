@@ -1,0 +1,11 @@
+pkgRoot: dist/ngx-jira-issue-collector
+branches: 
+  - name: "8.x"
+    range: "8.x"
+    channel: "8.x"
+  - name: master
+tagFormat: "${version}"
+plugins:
+  - "@semantic-release/changelog"
+  - "@semantic-release/release-notes-generator"
+  - semantic-release-ado
