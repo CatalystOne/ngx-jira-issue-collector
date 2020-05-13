@@ -21,7 +21,7 @@ steps:
 - script: npm run test
   displayName: Run tests
 
-- script: npm run Build
+- script: npm run build
   displayName: Run build
 
 - script: npm run semantic-release
