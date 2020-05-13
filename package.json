@@ -1,6 +1,7 @@
 {
   "name": "ngx-jira-issue-collector",
   "version": "0.0.0-semantically-released",
+  "description": "Jira Issue Collector as an angular component",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +9,6 @@
     "test": "ng test --browsers=ChromeHeadlessCI --watch=false",
     "lint": "ng lint",
     "commit": "git-cz",
-    "prepublish": "npm run build",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -42,6 +42,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
