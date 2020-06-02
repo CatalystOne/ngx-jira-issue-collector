@@ -42,6 +42,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-jira-issue-collector"
 }
