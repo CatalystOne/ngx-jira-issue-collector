@@ -1,3 +1,10 @@
+## [9.0.3](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.2...9.0.3) (2021-05-07)
+
+
+### Bug Fixes
+
+* **qc-3306:** qC-3306: fixes error ([2c128fc](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/2c128fcf2126ba9e2dc09dd7fe9ef0f9b7d388f2))
+
 ## [9.0.2](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.1...9.0.2) (2020-06-02)
 
 
