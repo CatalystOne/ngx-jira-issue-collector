@@ -66,6 +66,9 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
   }
 
   emitMessage = (): void => {
+    if (!this.iframe) {
+      return;
+    }
     const message: CollectorMessage = {
       messageType: 'collector.iframe.loaded',
       feedbackString: this.collectFeedback(),
