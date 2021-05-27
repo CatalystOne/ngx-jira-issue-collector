@@ -23,6 +23,7 @@
   background-clip: padding-box;
   overflow: hidden;
   width: 810px;
+  max-width: 100%;
   max-height: calc(100% - 100px);
 }
 
@@ -137,7 +138,7 @@
 
 @media print {
   .atlwdg-trigger {
-    display: none; 
+    display: none;
   }
 }
 
