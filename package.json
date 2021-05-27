@@ -61,7 +61,7 @@
     "rxjs": "~6.5.4",
     "semantic-release": "^17.0.7",
     "semantic-release-ado": "^1.2.2",
-    "ts-node": "~8.3.0",
+    "ts-node": "8.10.2",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3",
     "zone.js": "~0.10.2"
