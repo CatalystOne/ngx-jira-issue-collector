@@ -1,3 +1,10 @@
+## [9.0.4](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.3...9.0.4) (2021-05-27)
+
+
+### Bug Fixes
+
+* **sup-2890:** sUP-2890: fixes mobile view for popup ([#72](https://github.com/CatalystOne/ngx-jira-issue-collector/issues/72)) ([fd73bf9](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/fd73bf999713801f06b8d55964e8e03ae1759dc2))
+
 ## [9.0.3](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.2...9.0.3) (2021-05-07)
 
 
