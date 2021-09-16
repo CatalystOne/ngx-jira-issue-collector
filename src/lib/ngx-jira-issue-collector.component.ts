@@ -21,17 +21,15 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
   loader = false;
   created = false;
 
-  constructor(private sanitizer: DomSanitizer, private http: HttpClient) { }
+  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {}
 
   ngOnInit(): void {
     if (this.configuration && this.configuration.baseUrl && this.configuration.collectorId) {
-      this.fetchCollectorConfiguration().subscribe(
-        (config: CollectorOptions) => {
-          this.updateConfiguration(config);
-          this.setIframeSrc();
-          this.configLoaded = true;
-        }
-      );
+      this.fetchCollectorConfiguration().subscribe((config: CollectorOptions) => {
+        this.updateConfiguration(config);
+        this.setIframeSrc();
+        this.configLoaded = true;
+      });
     } else {
       console.error(`Missing configuration, requirement is: baseUrl and collectorId`);
     }
@@ -43,27 +41,27 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
       ...config
     };
     this.configuration = conf;
-  }
+  };
 
   setIframeSrc = () => {
     this.iframeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
       `${this.configuration.baseUrl}/rest/collectors/1.0/template/form/${this.configuration.collectorId}?os_authType=none`
     );
-  }
+  };
 
   @HostListener('document:keydown.escape')
   hideDialog = (): void => {
     if (!this.hidden) {
       this.hide();
     }
-  }
+  };
 
   showDialog = (): void => {
     if (!this.loader) {
       this.loader = true;
       this.created = true;
     }
-  }
+  };
 
   emitMessage = (): void => {
     if (!this.iframe) {
@@ -75,7 +73,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
       fieldValues: this.collectDefaultFieldValues()
     };
     this.iframe.nativeElement.contentWindow.postMessage(JSON.stringify(message), this.configuration.baseUrl);
-  }
+  };
 
   private collectFeedback = (): string => {
     if (!this.configuration.recordWebInfo) {
@@ -106,7 +104,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
       }
     }
     return feedbackArray.join('\n');
-  }
+  };
 
   private collectDefaultFieldValues = (): { [key: string]: string } => {
     let defaultValues = {};
@@ -123,17 +121,17 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
       };
     }
     return defaultValues;
-  }
+  };
 
   private hide = (): void => {
     this.hidden = true;
     this.created = false;
-  }
+  };
 
   private show = (): void => {
     this.hidden = false;
     this.loader = false;
-  }
+  };
 
   @HostListener('window:message', ['$event'])
   eventListener = (message: MessageEvent): void => {
@@ -144,7 +142,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
         this.show();
       }
     }
-  }
+  };
 
   getTriggerClasses = (): string => {
     if (!this.configuration.triggerPosition) {
@@ -165,13 +163,12 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
         classes = 'atlwdg-trigger atlwdg-TOP';
     }
     return classes;
-  }
+  };
 
   private fetchCollectorConfiguration = (): Observable<CollectorOptions> => {
-    return this.http
-      .jsonp<CollectorOptions>(
-        `${this.configuration.baseUrl}/rest/collectors/1.0/configuration/trigger/${this.configuration.collectorId}?os_authType=none`,
-        'callback'
-      );
-  }
+    return this.http.jsonp<CollectorOptions>(
+      `${this.configuration.baseUrl}/rest/collectors/1.0/configuration/trigger/${this.configuration.collectorId}?os_authType=none`,
+      'callback'
+    );
+  };
 }

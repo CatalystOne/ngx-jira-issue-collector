@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "arrow-parens": false,
+    "no-consecutive-blank-lines": false,
+    "trailing-comma": false,
+    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"]
+  }
+}

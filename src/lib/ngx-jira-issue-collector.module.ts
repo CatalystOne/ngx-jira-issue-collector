@@ -6,11 +6,7 @@ import { NgxJiraIssueCollectorComponent } from './ngx-jira-issue-collector.compo
 
 @NgModule({
   declarations: [NgxJiraIssueCollectorComponent],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    HttpClientJsonpModule
-  ],
+  imports: [CommonModule, HttpClientModule, HttpClientJsonpModule],
   exports: [NgxJiraIssueCollectorComponent]
 })
-export class NgxJiraIssueCollectorModule { }
+export class NgxJiraIssueCollectorModule {}
