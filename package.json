@@ -24,21 +24,18 @@
   },
   "license": "MIT",
   "private": false,
-  "peerDependencies": {
-    "@angular/common": "~9.1.9",
-    "@angular/core": "~9.1.9"
-  },
+  "peerDependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.7",
-    "@angular-devkit/build-ng-packagr": "~0.901.7",
-    "@angular/cli": "~9.1.7",
-    "@angular/common": "^9.1.9",
-    "@angular/compiler": "^9.1.9",
-    "@angular/compiler-cli": "^9.1.9",
-    "@angular/core": "^9.1.9",
-    "@angular/language-service": "^9.1.9",
-    "@angular/platform-browser": "^9.1.9",
-    "@angular/platform-browser-dynamic": "^9.1.9",
+    "@angular-devkit/build-angular": "~0.1002.3",
+    "@angular-devkit/build-ng-packagr": "~0.1002.3",
+    "@angular/cli": "~10.2.3",
+    "@angular/common": "^10.2.5",
+    "@angular/compiler": "^10.2.5",
+    "@angular/compiler-cli": "^10.2.5",
+    "@angular/core": "^10.2.5",
+    "@angular/language-service": "^10.2.5",
+    "@angular/platform-browser": "^10.2.5",
+    "@angular/platform-browser-dynamic": "^10.2.5",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@semantic-release/changelog": "^5.0.1",
@@ -50,20 +47,20 @@
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^4.2.5",
     "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
+    "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.0",
-    "karma-jasmine": "~3.0.1",
-    "karma-jasmine-html-reporter": "^1.4.2",
-    "ng-packagr": "^9.0.0",
-    "protractor": "~5.4.3",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^10.1.0",
+    "protractor": "~7.0.0",
     "rxjs": "~6.5.4",
     "semantic-release": "^17.0.7",
     "semantic-release-ado": "^1.2.2",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3",
+    "typescript": "~4.0.8",
     "zone.js": "~0.10.2"
   },
   "config": {
@@ -75,6 +72,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   },
   "husky": {
     "hooks": {
