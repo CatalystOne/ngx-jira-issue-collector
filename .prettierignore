@@ -1,0 +1,12 @@
+package.json
+package-lock.json
+yarn.lock
+yarn-error.log
+dist/
+build
+docs
+coverage
+.editorconfig
+.prettierignore
+.gitignore
+sonar-project.properties

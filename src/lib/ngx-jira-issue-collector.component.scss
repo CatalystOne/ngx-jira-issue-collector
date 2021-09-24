@@ -2,7 +2,7 @@
   background: black;
   height: 100%;
   left: 0;
-  opacity: .5;
+  opacity: 0.5;
   position: fixed;
   top: 0;
   width: 100%;
@@ -134,7 +134,6 @@
     transform: rotate(360deg);
   }
 }
-
 
 @media print {
   .atlwdg-trigger {

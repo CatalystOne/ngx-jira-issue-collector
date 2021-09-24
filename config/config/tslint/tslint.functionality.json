@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "forin": true,
+    "import-blacklist": [true, "rxjs/Rx"],
+    "label-position": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-super": true,
+    "no-empty": false,
+    "no-eval": true,
+    "no-misused-new": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "radix": true,
+    "triple-equals": [true, "allow-null-check"],
+    "typeof-compare": true
+  }
+}

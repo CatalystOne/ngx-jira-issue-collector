@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgxJiraIssueCollectorComponent } from './ngx-jira-issue-collector.component';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -8,12 +8,14 @@ describe('NgxJiraIssueCollectorComponent', () => {
   let component: NgxJiraIssueCollectorComponent;
   let fixture: ComponentFixture<NgxJiraIssueCollectorComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [NgxJiraIssueCollectorComponent],
-      imports: [HttpClientTestingModule]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [NgxJiraIssueCollectorComponent],
+        imports: [HttpClientTestingModule]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxJiraIssueCollectorComponent);

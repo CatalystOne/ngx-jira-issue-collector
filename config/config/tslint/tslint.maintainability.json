@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "deprecation": {
+      "severity": "warn"
+    },
+    "max-classes-per-file": false,
+    "object-literal-sort-keys": false,
+    "prefer-const": true
+  }
+}
