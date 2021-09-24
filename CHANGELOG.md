@@ -1,3 +1,21 @@
+# [10.0.0](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.4...10.0.0) (2021-09-24)
+
+
+### Bug Fixes
+
+* **setup:** implemented review comment regarding peerDependencies ([ba257a6](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/ba257a6640ad74aea97696c80a2a0d2428f93de9))
+
+
+### Features
+
+* **setup:** upgraded angular from v11 to v12 and also configured codestyle ([4941827](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/494182715056acfdca3e8aecf299f3477e62c004))
+
+
+### BREAKING CHANGES
+
+* **setup:** upgraded angular from v11 to v12 and upgraded all dependencies to latest version
+and also configured codestyle
+
 ## [9.0.4](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.3...9.0.4) (2021-05-27)
 
 ### Bug Fixes
