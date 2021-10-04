@@ -20,6 +20,9 @@ steps:
 
 - script: npm run build
   displayName: Run build
+  
+- script: npm run sonar
+  displayName: Running sonar
 
 - script: npm run semantic-release
   displayName: Semantic Release
