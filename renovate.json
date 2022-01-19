@@ -1,3 +1,22 @@
 {
-  "extends": ["config:base"]
+  "extends": [
+      "config:base",
+      ":combinePatchMinorReleases"
+    ],
+  "timezone": "Asia/Kolkata",
+  "schedule": ["after 10pm every weekday", "before 4am every weekday", "every weekend"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["typescript", "rxjs", "tslib"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    }
+  ]
 }
