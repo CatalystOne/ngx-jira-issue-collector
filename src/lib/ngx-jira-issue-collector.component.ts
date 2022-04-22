@@ -11,7 +11,7 @@ import { CollectorOptions, CollectorMessage, TriggerPosition } from './types';
   styleUrls: ['./ngx-jira-issue-collector.component.scss']
 })
 export class NgxJiraIssueCollectorComponent implements OnInit {
-  @ViewChild('iframeEl') private iframe: ElementRef<HTMLIFrameElement>;
+  @ViewChild('iframeEl') private readonly iframe: ElementRef<HTMLIFrameElement>;
 
   @Input() configuration?: CollectorOptions;
 
@@ -21,7 +21,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
   loader = false;
   created = false;
 
-  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {}
+  constructor(private readonly sanitizer: DomSanitizer, private readonly http: HttpClient) {}
 
   ngOnInit(): void {
     if (this.configuration && this.configuration.baseUrl && this.configuration.collectorId) {
@@ -31,7 +31,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
         this.configLoaded = true;
       });
     } else {
-      console.error(`Missing configuration, requirement is: baseUrl and collectorId`);
+      console.error('Missing configuration, requirement is: baseUrl and collectorId');
     }
   }
 
@@ -75,7 +75,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
     this.iframe.nativeElement.contentWindow.postMessage(JSON.stringify(message), this.configuration.baseUrl);
   };
 
-  private collectFeedback = (): string => {
+  private readonly collectFeedback = (): string => {
     if (!this.configuration.recordWebInfo) {
       return '';
     }
@@ -83,7 +83,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
       Location: window.location.href,
       Referrer: document.referrer,
       'User-Agent': navigator.userAgent,
-      'Screen Resolution': screen.width + ' x ' + screen.height
+      'Screen Resolution': `${screen.width} x ${screen.height}`
     };
     if (this.configuration.environment) {
       feedback = {
@@ -100,13 +100,13 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
     const feedbackArray: string[] = [];
     for (const prop in feedback) {
       if (feedback.hasOwnProperty(prop) && feedback[prop] && typeof feedback[prop] === 'string') {
-        feedbackArray.push('*' + prop + '*: ' + feedback[prop]);
+        feedbackArray.push(`*${prop}*: ${feedback[prop]}`);
       }
     }
     return feedbackArray.join('\n');
   };
 
-  private collectDefaultFieldValues = (): { [key: string]: string } => {
+  private readonly collectDefaultFieldValues = (): { [key: string]: string } => {
     let defaultValues = {};
     if (this.configuration.fieldValues) {
       defaultValues = {
@@ -123,12 +123,12 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
     return defaultValues;
   };
 
-  private hide = (): void => {
+  private readonly hide = (): void => {
     this.hidden = true;
     this.created = false;
   };
 
-  private show = (): void => {
+  private readonly show = (): void => {
     this.hidden = false;
     this.loader = false;
   };
@@ -165,7 +165,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
     return classes;
   };
 
-  private fetchCollectorConfiguration = (): Observable<CollectorOptions> => {
+  private readonly fetchCollectorConfiguration = (): Observable<CollectorOptions> => {
     return this.http.jsonp<CollectorOptions>(
       `${this.configuration.baseUrl}/rest/collectors/1.0/configuration/trigger/${this.configuration.collectorId}?os_authType=none`,
       'callback'
