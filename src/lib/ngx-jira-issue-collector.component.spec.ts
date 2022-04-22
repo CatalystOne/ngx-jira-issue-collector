@@ -7,15 +7,14 @@ import { TriggerPosition } from './types';
 describe('NgxJiraIssueCollectorComponent', () => {
   let component: NgxJiraIssueCollectorComponent;
   let fixture: ComponentFixture<NgxJiraIssueCollectorComponent>;
+  const baseUrl = 'http://jira.myorg.com';
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxJiraIssueCollectorComponent],
-        imports: [HttpClientTestingModule]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxJiraIssueCollectorComponent],
+      imports: [HttpClientTestingModule]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxJiraIssueCollectorComponent);
@@ -36,7 +35,7 @@ describe('NgxJiraIssueCollectorComponent', () => {
   it('should call fetchCollectorConfiguration with configuration', () => {
     const spy = spyOn<any>(component, 'fetchCollectorConfiguration').and.callThrough();
     component.configuration = {
-      baseUrl: 'http://jira.myorg.com',
+      baseUrl,
       collectorId: 'coll123'
     };
     const url = TestBed.inject(DomSanitizer).bypassSecurityTrustResourceUrl(
@@ -50,7 +49,7 @@ describe('NgxJiraIssueCollectorComponent', () => {
 
   it('collectFeedback() should work with environment / environmentFn', () => {
     component.configuration = {
-      baseUrl: 'http://jira.myorg.com',
+      baseUrl,
       collectorId: 'coll123',
       recordWebInfo: true,
       environment: {
@@ -71,7 +70,7 @@ describe('NgxJiraIssueCollectorComponent', () => {
 
   it('collectDefaultFieldValues() should work with fieldValues / fieldValuesFn', () => {
     component.configuration = {
-      baseUrl: 'http://jira.myorg.com',
+      baseUrl,
       collectorId: 'coll123',
       recordWebInfo: true,
       fieldValues: {
@@ -96,7 +95,7 @@ describe('NgxJiraIssueCollectorComponent', () => {
 
   it('should assign correct css to trigger', () => {
     component.configuration = {
-      baseUrl: 'http://jira.myorg.com',
+      baseUrl,
       collectorId: 'coll123'
     };
     const defaultClasses = component.getTriggerClasses();

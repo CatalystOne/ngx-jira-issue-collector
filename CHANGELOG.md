@@ -1,9 +1,8 @@
 ## [10.0.1](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.0...10.0.1) (2021-09-24)
 
-
 ### Bug Fixes
 
-* **sonar:** added sonar as a dependency and added a script for the same ([562d991](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/562d99191a1bf39ecfe21b76097fc30eed5259b8))
+- **sonar:** added sonar as a dependency and added a script for the same ([562d991](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/562d99191a1bf39ecfe21b76097fc30eed5259b8))
 
 # [10.0.0](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/9.0.4...10.0.0) (2021-09-24)
 
