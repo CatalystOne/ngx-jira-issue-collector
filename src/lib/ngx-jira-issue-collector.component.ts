@@ -31,7 +31,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
         this.configLoaded = true;
       });
     } else {
-      console.error(`Missing configuration, requirement is: baseUrl and collectorId`);
+      console.error('Missing configuration, requirement is: baseUrl and collectorId');
     }
   }
 
@@ -83,7 +83,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
       Location: window.location.href,
       Referrer: document.referrer,
       'User-Agent': navigator.userAgent,
-      'Screen Resolution': screen.width + ' x ' + screen.height
+      'Screen Resolution': `${screen.width} x ${screen.height}`
     };
     if (this.configuration.environment) {
       feedback = {
@@ -100,7 +100,7 @@ export class NgxJiraIssueCollectorComponent implements OnInit {
     const feedbackArray: string[] = [];
     for (const prop in feedback) {
       if (feedback.hasOwnProperty(prop) && feedback[prop] && typeof feedback[prop] === 'string') {
-        feedbackArray.push('*' + prop + '*: ' + feedback[prop]);
+        feedbackArray.push(`*${prop}*: ${feedback[prop]}`);
       }
     }
     return feedbackArray.join('\n');
