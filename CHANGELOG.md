@@ -1,9 +1,8 @@
 ## [10.0.2](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.1...10.0.2) (2022-04-22)
 
-
 ### Bug Fixes
 
-* sonar fixes ([#150](https://github.com/CatalystOne/ngx-jira-issue-collector/issues/150)) ([fc84e1b](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/fc84e1b8da714b56b756f523217154489f45055f))
+- sonar fixes ([#150](https://github.com/CatalystOne/ngx-jira-issue-collector/issues/150)) ([fc84e1b](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/fc84e1b8da714b56b756f523217154489f45055f))
 
 ## [10.0.1](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.0...10.0.1) (2021-09-24)
 
