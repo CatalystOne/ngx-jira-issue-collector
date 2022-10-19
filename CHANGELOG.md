@@ -1,9 +1,8 @@
 ## [10.0.3](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.2...10.0.3) (2022-10-03)
 
-
 ### Bug Fixes
 
-* **dependencies:** upgraded all dependencies to latest version, except angular (CO-50987) ([e80a59f](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/e80a59fb72c5df77a9868950b35c0ad0d3bafabd))
+- **dependencies:** upgraded all dependencies to latest version, except angular (CO-50987) ([e80a59f](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/e80a59fb72c5df77a9868950b35c0ad0d3bafabd))
 
 ## [10.0.2](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.1...10.0.2) (2022-04-22)
 
