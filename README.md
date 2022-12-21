@@ -15,10 +15,14 @@ npm run {lint, test, build, commit, semantic-release}
 | ------- | ------- |
 | 8.x.x   | 8.x     |
 | 9.x.x   | 9.x     |
+| 12.x.x  | 10.x    |
+| 14.x.x  | 11.x    |
 
-Ivy compilation is disabled as per [docs](https://angular.io/guide/creating-libraries#publishing-your-library)
+Ivy is partially enabled with v11.x of this library(https://angular.io/guide/creating-libraries#publishing-libraries)
 
-> It is not recommended to publish Ivy libraries to NPM repositories. Before publishing a library to NPM, build it using the --prod flag which will use the older compiler and runtime known as View Engine instead of Ivy.
+Ivy compilation is disabled till v10.x of this library as per [docs](https://angular.io/guide/creating-libraries#publishing-your-library)
+
+> Till v10.x of this library, it is not recommended to publish Ivy libraries to NPM repositories. Before publishing a library to NPM, build it using the --prod flag which will use the older compiler and runtime known as View Engine instead of Ivy.
 
 | Jira   |
 | ------ |
