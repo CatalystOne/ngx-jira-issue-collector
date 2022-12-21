@@ -1,3 +1,17 @@
+# [11.0.0](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.3...11.0.0) (2022-12-21)
+
+
+### Build System
+
+* upgrades to newer angular 14 ([#184](https://github.com/CatalystOne/ngx-jira-issue-collector/issues/184)) ([7bbe34e](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/7bbe34e016aaf0332a8c06bb427f7b15b4af5ecd))
+
+
+### BREAKING CHANGES
+
+* upgrades to newer angular
+
+* fix: upgrades to newer version of angular & others
+
 ## [10.0.3](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.2...10.0.3) (2022-10-03)
 
 ### Bug Fixes
