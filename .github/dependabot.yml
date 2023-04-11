@@ -1,0 +1,17 @@
+version: 2
+registries:
+  npm-azure-artifactory:
+    type: npm-registry
+    url: https://pkgs.dev.azure.com/catonedevops/_packaging/catalystone-npm/npm/registry/
+    username: ${{ secrets.AZURE_ARTIFACTS_USERNAME }}
+    password: ${{ secrets.AZURE_ARTIFACTS_ACCESS_TOKEN }}
+    replaces-base: true
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    registries:
+      - npm-azure-artifactory
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    open-pull-requests-limit: 10
