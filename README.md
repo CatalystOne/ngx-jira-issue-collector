@@ -17,6 +17,7 @@ npm run {lint, test, build, commit, semantic-release}
 | 9.x.x   | 9.x     |
 | 12.x.x  | 10.x    |
 | 14.x.x  | 11.x    |
+| 15.x.x  | 12.x    |
 
 Ivy is partially enabled with v11.x of this library(https://angular.io/guide/creating-libraries#publishing-libraries)
 
