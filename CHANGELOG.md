@@ -1,3 +1,17 @@
+# [12.0.0](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/11.0.0...12.0.0) (2023-07-11)
+
+
+### chore
+
+* upgrade to angular 15 ([#223](https://github.com/CatalystOne/ngx-jira-issue-collector/issues/223)) ([826606f](https://github.com/CatalystOne/ngx-jira-issue-collector/commit/826606ff93e384186ab04b21f5c654b26adaf617))
+
+
+### BREAKING CHANGES
+
+* upgrade to angular 15
+
+https://catalystone.atlassian.net/browse/CO-1636
+
 # [11.0.0](https://github.com/CatalystOne/ngx-jira-issue-collector/compare/10.0.3...11.0.0) (2022-12-21)
 
 ### Build System
